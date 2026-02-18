@@ -1,0 +1,5 @@
+[Pod]
+PodName=forgejopod
+PublishPort=2222:22
+PublishPort=3000:3000
+AddHost=db:127.0.0.1

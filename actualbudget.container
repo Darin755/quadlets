@@ -1,0 +1,16 @@
+[Unit]
+
+[Container]
+ContainerName=Actualbudget
+Image=docker.io/actualbudget/actual-server:latest
+AutoUpdate=registry
+PublishPort=5006:5006
+Volume=/mnt/disk1/actualbudget:/data/
+EnvironmentFile=/mnt/disk1/env/actualbudget.env
+AddHost=git.darin755.xyz:169.254.1.2
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=always

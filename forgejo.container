@@ -1,0 +1,16 @@
+[Unit]
+Requires=forgejodb.service
+
+[Container]
+Pod=forgejo.pod
+ContainerName=forgejo
+Image=codeberg.org/forgejo/forgejo:14
+AutoUpdate=registry
+Volume=/mnt/disk1/forgejo:/data
+EnvironmentFile=/mnt/disk1/env/forgejo.env
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=always

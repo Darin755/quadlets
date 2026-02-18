@@ -1,0 +1,14 @@
+[Unit]
+
+[Container]
+ContainerName=owncloudvalkey
+Image=docker.io/valkey/valkey:9
+AutoUpdate=registry
+Network=owncloud.network
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=always
+

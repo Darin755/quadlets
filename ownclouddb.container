@@ -1,0 +1,9 @@
+[Unit]
+
+[Container]
+ContainerName=ownclouddb
+Image=docker.io/mariadb:10
+Volume=/mnt/disk1/owncloud/db:/var/lib/mysql
+AutoUpdate=registry
+EnvironmentFile=/mnt/disk1/env/ownclouddb.env
+Network=owncloud.network

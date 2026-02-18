@@ -1,0 +1,15 @@
+[Unit]
+
+[Container]
+ContainerName=vaultwarden
+Image=docker.io/vaultwarden/server:latest
+AutoUpdate=registry
+PublishPort=8182:80
+Volume=/mnt/disk1/vaultwarden:/data/
+EnvironmentFile=/mnt/disk1/env/vaultwarden.env
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=always

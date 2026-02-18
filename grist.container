@@ -1,0 +1,16 @@
+[Unit]
+
+[Container]
+ContainerName=grist
+Image=docker.io/gristlabs/grist
+PublishPort=8484:8484
+Volume=/mnt/disk1/grist:/persist
+AutoUpdate=registry
+EnvironmentFile=/mnt/disk1/env/grist.env
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=always
+

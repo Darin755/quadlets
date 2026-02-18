@@ -1,0 +1,17 @@
+[Unit]
+
+[Container]
+ContainerName=files
+Image=docker.io/rclone/rclone:1.71.2
+PublishPort=8080:8080
+Volume=/mnt/disk1/files/config:/config
+Volume=/mnt/disk1/files/data:/data
+Exec=serve webdav /data --addr :8080 --htpasswd /config/htpasswd
+AutoUpdate=registry
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=always
+

@@ -1,0 +1,9 @@
+[Unit]
+
+[Container]
+Pod=forgejo.pod
+Image=docker.io/pgvector/pgvector:pg17
+Volume=/mnt/disk1/forgejo/forgejodb:/var/lib/postgresql/data
+AutoUpdate=registry
+EnvironmentFile=/mnt/disk1/env/postgres.env
+
